@@ -1,0 +1,55 @@
+MyMain:
+
+<MyMain>:
+    outputdata: outputdata
+    inputdata: inputdata
+    canvas.before:
+		Color:
+			rgb: (0.03, 0.54, 0.03)
+		Rectangle:
+			pos: self.pos
+			size: self.size
+    orientation: 'vertical'
+    Label:
+        size_hint: 1, .5
+        text: "        Base64\ndecode/encode"
+        font_size: 30
+    BoxLayout:
+        orientation: "vertical"
+        cols: 2
+        size_hint: 0.9, 1
+        pos_hint: {'center_x': 0.5}
+        Label:
+            text: "input"
+            size_hint: 1, None
+            size: 10, 15
+            font_size: 12
+        TextInput:
+            id: inputdata
+            text:
+        Label:
+            text: "output"
+            size_hint: 1, None
+            size: 10, 15
+            font_size: 12
+        TextInput:
+            id: outputdata
+            text: "-- output --"
+    BoxLayout:
+        size_hint: 1, .4
+        spacing: '5dp'
+        padding: ('70dp', '70dp', '70dp', '30dp')
+        Button:
+            background_color: 244, 241, 24, 1
+            color: 0, 0, 0, 1
+            size: 100, 70
+            text: "Decode"
+            font_size: 18
+            on_press: root.decode()
+        Button:
+            background_color: 244, 241, 24, 1
+            color: 0, 0, 0, 1
+            size: 100, 70
+            text: "Encode"
+            font_size: 18
+            on_press: root.encode()
